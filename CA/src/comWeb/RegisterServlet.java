@@ -1,17 +1,19 @@
 package comWeb;
 
 import comUtil.SqlOperate;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class RegisterServlet extends HttpServlet {
     String content = null;
     private static final long serialVersionUID=1L;
+    Logger logger = (Logger) LogManager.getLogger("myLog");//记录日志
 
     //public void destroy(){
     // super.destroy();
@@ -38,10 +40,11 @@ public class RegisterServlet extends HttpServlet {
         System.out.print(Password);
 
         boolean x= false;
-        x = sqlOperate.insert(Username,Password);
+        x = sqlOperate.insert_to_user(Username,Password);
         String error;
         if(!x){
             content="用户注册失败";
+            logger.info(content);
             System.out.println("用户注册失败");
 
             error="用户注册失败";
@@ -50,6 +53,7 @@ public class RegisterServlet extends HttpServlet {
         }
         else{
             content="用户 "+Username+"注册成功";
+            logger.info(content);
             System.out.println("用户 "+Username+"注册成功");
             request.getRequestDispatcher("index.jsp").forward(request,response);
         }

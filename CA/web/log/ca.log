@@ -1,0 +1,71 @@
+18:33:24.197 [http-nio-8080-exec-9] INFO  myLog - 用户 1001登录成功
+18:37:25.915 [http-nio-8080-exec-3] INFO  myLog - 用户 1001登录成功
+22:42:38.866 [http-nio-8080-exec-7] INFO  myLog - 用户 1001登录成功
+22:43:03.884 [http-nio-8080-exec-1] INFO  myLog - sxh成功注册证书，序列号为：20201222224303sxh
+22:43:03.992 [http-nio-8080-exec-1] INFO  myLog - 序列号为：20201222224303sxh的证书成功存储到数据库certificate中！
+22:54:23.477 [http-nio-8080-exec-8] INFO  myLog - 用户 1001登录成功
+22:55:08.878 [http-nio-8080-exec-2] INFO  myLog - 崔同发成功注册证书，序列号为：20201222225508崔同发
+22:55:08.973 [http-nio-8080-exec-2] INFO  myLog - 序列号为：20201222225508崔同发的证书成功存储到数据库certificate中！
+13:14:01.735 [http-nio-8080-exec-9] INFO  myLog - 用户1001登录失败，原因：验证码输入错误
+13:14:04.928 [http-nio-8080-exec-9] INFO  myLog - 用户 1001登录成功
+13:14:29.004 [http-nio-8080-exec-1] INFO  myLog - 用户1001登录失败，原因：验证码输入错误
+13:14:29.108 [http-nio-8080-exec-1] INFO  myLog - 用户 1001登录成功
+13:14:43.137 [http-nio-8080-exec-4] INFO  myLog - 用户1001登录失败，原因：验证码输入错误
+13:14:43.227 [http-nio-8080-exec-4] INFO  myLog - 用户 1001登录成功
+13:16:56.236 [http-nio-8080-exec-5] INFO  myLog - 用户1001登录失败，原因：验证码输入错误
+13:17:02.384 [http-nio-8080-exec-5] INFO  myLog - 用户 1001登录成功
+13:17:15.693 [http-nio-8080-exec-9] INFO  myLog - 用户 1001登录成功
+13:20:16.186 [http-nio-8080-exec-6] INFO  myLog - 用户 1001登录成功
+13:44:48.846 [http-nio-8080-exec-8] INFO  myLog - 用户 1001登录成功
+16:34:18.516 [http-nio-8080-exec-6] INFO  myLog - 用户 1001登录成功
+16:34:35.017 [http-nio-8080-exec-9] INFO  myLog - 1001成功注册证书，序列号为：202012231634341001
+16:34:35.149 [http-nio-8080-exec-9] INFO  myLog - 序列号为：202012231634341001的证书成功存储到数据库certificate中！
+16:42:16.625 [http-nio-8080-exec-9] INFO  myLog - 用户 1001登录成功
+16:42:27.793 [http-nio-8080-exec-1] INFO  myLog - 1001成功注册证书，序列号为：202012231642271001
+16:42:27.889 [http-nio-8080-exec-1] INFO  myLog - 序列号为：202012231642271001的证书成功存储到数据库certificate中！
+16:51:29.259 [http-nio-8080-exec-10] INFO  myLog - 用户 1001登录成功
+16:55:35.551 [http-nio-8080-exec-4] INFO  myLog - 用户 1001登录成功
+16:57:55.047 [http-nio-8080-exec-4] INFO  myLog - 用户 1001登录成功
+17:02:37.319 [http-nio-8080-exec-4] INFO  myLog - 用户1001登录失败，原因：验证码输入错误
+17:02:40.728 [http-nio-8080-exec-4] INFO  myLog - 用户 1001登录成功
+17:03:11.607 [http-nio-8080-exec-8] INFO  myLog - 用户 1001登录成功
+17:05:29.664 [http-nio-8080-exec-5] INFO  myLog - 用户 1001登录成功
+17:24:15.682 [http-nio-8080-exec-5] INFO  myLog - 用户 1001登录成功
+17:24:24.493 [http-nio-8080-exec-9] INFO  myLog - hit成功注册证书，序列号为：20201223172424hit
+17:24:24.603 [http-nio-8080-exec-9] INFO  myLog - 序列号为：20201223172424hit的证书成功存储到数据库certificate中！
+17:38:00.627 [http-nio-8080-exec-5] INFO  myLog - 用户 1001登录成功
+17:38:23.560 [http-nio-8080-exec-6] INFO  myLog - hit成功注册证书，序列号为：20201223173823hit
+17:38:23.654 [http-nio-8080-exec-6] INFO  myLog - 序列号为：20201223173823hit的证书成功存储到数据库certificate中！
+17:49:13.973 [http-nio-8080-exec-6] INFO  myLog - 用户 1001登录成功
+17:49:21.320 [http-nio-8080-exec-10] INFO  myLog - hit成功注册证书，序列号为：20201223174921hit
+17:49:21.407 [http-nio-8080-exec-10] INFO  myLog - 序列号为：20201223174921hit的证书成功存储到数据库certificate中！
+17:54:06.191 [http-nio-8080-exec-2] INFO  myLog - 用户 1001登录成功
+17:58:36.582 [http-nio-8080-exec-9] INFO  myLog - 用户 1001登录成功
+17:58:57.037 [http-nio-8080-exec-2] INFO  myLog - hit成功注册证书，序列号为：20201223175856hit
+17:58:57.139 [http-nio-8080-exec-2] INFO  myLog - 序列号为：20201223175856hit的证书成功存储到数据库certificate中！
+18:01:25.505 [http-nio-8080-exec-5] INFO  myLog - 用户 1001登录成功
+18:01:40.782 [http-nio-8080-exec-6] INFO  myLog - 崔同发成功注册证书，序列号为：20201223180140崔同发
+18:01:40.871 [http-nio-8080-exec-6] INFO  myLog - 序列号为：20201223180140崔同发的证书成功存储到数据库certificate中！
+18:20:01.057 [http-nio-8080-exec-6] INFO  myLog - 用户 1001登录成功
+18:20:54.681 [http-nio-8080-exec-1] INFO  myLog - 崔同发成功注册证书，序列号为：20201223182054崔同发
+18:20:54.800 [http-nio-8080-exec-1] INFO  myLog - 序列号为：20201223182054崔同发的证书成功存储到数据库certificate中！
+18:32:13.862 [http-nio-8080-exec-1] INFO  myLog - 用户 101登录成功
+18:32:37.835 [http-nio-8080-exec-6] INFO  myLog - XXX银行成功注册证书，序列号为：20201223183237XXX银行
+18:32:37.895 [http-nio-8080-exec-6] INFO  myLog - 序列号为：20201223183237XXX银行的证书成功存储到数据库certificate中！
+19:57:46.652 [http-nio-8080-exec-7] INFO  myLog - 用户1001登录失败，原因：验证码输入错误
+19:57:49.807 [http-nio-8080-exec-7] INFO  myLog - 用户 1001登录成功
+19:58:17.355 [http-nio-8080-exec-3] INFO  myLog - 用户 1001登录成功
+20:00:12.337 [http-nio-8080-exec-5] INFO  myLog - 用户 1001登录成功
+20:02:14.678 [http-nio-8080-exec-5] INFO  myLog - 用户 1001登录成功
+20:05:03.634 [http-nio-8080-exec-6] INFO  myLog - 用户 1001登录成功
+20:15:06.607 [http-nio-8080-exec-3] INFO  myLog - 用户 11@qq.com注册成功
+20:15:22.254 [http-nio-8080-exec-5] INFO  myLog - 用户11@qq.com登录失败，原因：验证码输入错误
+20:15:39.687 [http-nio-8080-exec-4] INFO  myLog - 用户11@qq.com登录失败，原因：验证码输入错误
+20:18:06.863 [http-nio-8080-exec-9] INFO  myLog - 用户 102登录成功
+20:19:00.476 [http-nio-8080-exec-4] INFO  myLog - 巴南区成功注册证书，序列号为：20201223201900巴南区
+20:19:00.531 [http-nio-8080-exec-4] INFO  myLog - 序列号为：20201223201900巴南区的证书成功存储到数据库certificate中！
+20:21:25.291 [http-nio-8080-exec-4] INFO  myLog - 用户 1001登录成功
+20:33:13.524 [http-nio-8080-exec-4] INFO  myLog - 用户 1063695334@qq.com注册成功
+20:33:38.070 [http-nio-8080-exec-10] INFO  myLog - 用户 1063695334@qq.com登录成功
+20:35:47.065 [http-nio-8080-exec-6] INFO  myLog - testshop成功注册证书，序列号为：20201223203547testshop
+20:35:47.123 [http-nio-8080-exec-6] INFO  myLog - 序列号为：20201223203547testshop的证书成功存储到数据库certificate中！

@@ -1,4 +1,4 @@
-package com.ctf.servlet;
+package comDao;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;

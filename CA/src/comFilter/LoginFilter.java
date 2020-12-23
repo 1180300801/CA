@@ -20,9 +20,10 @@ public class LoginFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         String uri = request.getRequestURI();
         // 用户访问除了资源文件、主页、验证码servlet、登录servlet、注册servlet之外，都要进行登录状态检查
-        if (uri.contains("index.jsp") || uri.contains("register.jsp") || uri.contains("/CheckNumServlet") || uri.contains("/LoginServlet") || uri.contains("/RegisterServlet") ) {
+        if (uri.contains("index.jsp") || uri.contains("register.jsp") || uri.contains("/CheckNumServlet") || uri.contains("/LoginServlet") || uri.contains("/RegisterServlet") || uri.contains("/images")|| uri.contains("/testServlet") ) {
             chain.doFilter(req, resp);
-        } else {
+        }
+        else {
             Object username = request.getSession().getAttribute("username");
             if (username != null) {
                 chain.doFilter(req, resp);

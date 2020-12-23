@@ -16,17 +16,19 @@
     <title>登录页面</title>
     <style>
 
-        html {
-            min-width: 1000px;
-            background:   #f9f9f9 ;
-            overflow: scroll;
-            overflow-x: hidden;
-        }
+        /*html {*/
+        /*    min-width: 1000px;*/
+        /*    background:   #f9f9f9 ;*/
+        /*    overflow: scroll;*/
+        /*    overflow-x: hidden;*/
+        /*}*/
 
         body {
-            background-image: url("./images/背景1.jpg");
+            background: url(./images/背景1.jpg)  no-repeat fixed center;
             background-size: cover;
-            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
         }
 
         .loginForm {
