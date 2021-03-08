@@ -1,12 +1,17 @@
-body {
-    background-image: url("../images/背景1.jpg");;
-    background-size: 100%;
-    background-repeat: no-repeat;
+*:not(p) {
+    margin: 0;
+    padding: 0;
+}
+#canvas{
+    position: fixed;
+    background: #ccc;
+    overflow: auto;
+    z-index: -1;
 }
 
-#login_frame {
+.loginForm {
     width: 400px;
-    height: 260px;
+    height: 300px;
     padding: 13px;
 
     position: absolute;
@@ -21,13 +26,19 @@ body {
     text-align: center;
 }
 
+#register{
+    color: white;
+    text-decoration: none;
+}
+
+#register:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
 form p > * {
     display: inline-block;
     vertical-align: middle;
-}
-
-#image_logo {
-    margin-top: 22px;
 }
 
 .label_input {
@@ -53,7 +64,7 @@ form p > * {
     border: 0;
 }
 
-#btn_login {
+#login {
     font-size: 14px;
     font-family: 宋体;
 
@@ -69,6 +80,7 @@ form p > * {
 
     float: left;
 }
+
 
 #forget_pwd {
     font-size: 12px;
@@ -87,4 +99,8 @@ form p > * {
 
 #login_control {
     padding: 0 28px;
+}
+
+#copyright{
+    position: fixed; bottom: 0; left: 400px;
 }

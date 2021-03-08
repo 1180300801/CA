@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class ShowServlet extends HttpServlet {
     String content = null;
     private static final long serialVersionUID=1L;
-    Logger logger = (Logger) LogManager.getLogger("myLog");//记录日志
+    Logger logger = LogManager.getLogger("myLog");//记录日志
 
     //public void destroy(){
     // super.destroy();
@@ -40,8 +40,8 @@ public class ShowServlet extends HttpServlet {
         SqlOperate sqlOperate=new SqlOperate();
         try {
             certificate cer = sqlOperate.checkCertificate(username);
-            request.getSession().setAttribute("file_path",cer.getFile_path());
-            request.setAttribute("certificate",cer);
+            request.getSession().setAttribute("cer_Owner",true);
+            request.getSession().setAttribute("certificate",cer);
             request.getRequestDispatcher("certificate_info.jsp").forward(request,response);
         } catch (SQLException e) {
             e.printStackTrace();

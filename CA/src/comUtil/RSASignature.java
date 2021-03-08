@@ -23,7 +23,7 @@ public class RSASignature {
      */
     public static String sign(String content, String privateKey, String encode) {
         try {
-            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(Base64.getDecoder().decode(privateKey));
+            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(Base64.getMimeDecoder().decode(privateKey));
             KeyFactory keyf = KeyFactory.getInstance("RSA");
             PrivateKey priKey = keyf.generatePrivate(priPKCS8);
             java.security.Signature signature =
@@ -68,7 +68,7 @@ public class RSASignature {
     public static boolean doCheck(String content, String sign, String publicKey, String encode) {
         try {
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-            byte[] encodedKey = Base64.getDecoder().decode(publicKey);
+            byte[] encodedKey = Base64.getMimeDecoder().decode(publicKey);
             PublicKey pubKey = keyFactory.generatePublic(new X509EncodedKeySpec(encodedKey));
             java.security.Signature signature =
                 java.security.Signature.getInstance(SIGN_ALGORITHMS);
@@ -76,8 +76,7 @@ public class RSASignature {
             signature.update(content.getBytes(encode));
             System.out.println(sign);
             System.out.println(Base64.getDecoder().decode(sign).length);
-            boolean bverify = signature.verify(Base64.getDecoder().decode(sign));
-            return bverify;
+            return signature.verify(Base64.getDecoder().decode(sign));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -93,8 +92,7 @@ public class RSASignature {
                 java.security.Signature.getInstance(SIGN_ALGORITHMS);
             signature.initVerify(pubKey);
             signature.update(content.getBytes());
-            boolean bverify = signature.verify(Base64.getDecoder().decode(sign));
-            return bverify;
+            return signature.verify(Base64.getDecoder().decode(sign));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,32 +1,32 @@
 package comUtil;
+
 import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
-
-import java.net.URLEncoder;
 import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
 import java.security.SecureRandom;
-import java.security.Signature;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class RSA {
-
     private static Map<Integer, String> keyMap = new HashMap<Integer, String>();  //用于封装随机产生的公钥与私钥
     public static void main(String[] args) throws Exception {
-
-
-
-
+        //生成公钥和私钥
+        genKeyPair();
+        //加密字符串
+        String message = "df723820";
+        System.out.println("随机生成的公钥为:" + keyMap.get(0));
+        System.out.println("随机生成的私钥为:" + keyMap.get(1));
+        String messageEn = encrypt(message,keyMap.get(0));
+        System.out.println(message + "\t加密后的字符串为:" + messageEn);
+        String messageDe = decrypt(messageEn,keyMap.get(1));
+        System.out.println("还原后的字符串为:" + messageDe);
     }
 
     /**
@@ -43,7 +43,6 @@ public class RSA {
         RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();   // 得到私钥
         RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();  // 得到公钥
         String publicKeyString = new String(Base64.encodeBase64(publicKey.getEncoded()));
-
         // 得到私钥字符串
         String privateKeyString = new String(Base64.encodeBase64((privateKey.getEncoded())));
         // 将公钥和私钥保存到Map
@@ -96,27 +95,4 @@ public class RSA {
         return outStr;
     }
 
-    public static String sign(String data,String privatekey) throws Exception{
-        byte[] inputByte = Base64.decodeBase64(data.getBytes("UTF-8"));
-        byte[] decoded = Base64.decodeBase64(privatekey);
-        PrivateKey priKey =  KeyFactory.getInstance("RSA").generatePrivate(new PKCS8EncodedKeySpec(decoded));
-        Signature sign = Signature.getInstance("SHA256WithRSA");
-        sign.initSign(priKey);
-        sign.update(data.getBytes());
-        byte[] signInfo = sign.sign();
-        System.out.println(Base64.encodeBase64URLSafeString(signInfo));
-        return Base64.encodeBase64URLSafeString(signInfo)+"=";
-
-    }
-
-    public static boolean verify(String data,String data_sign,String publickey)throws Exception{
-        //base64编码的公钥
-        byte[] decoded = Base64.decodeBase64(publickey);
-        PublicKey pubKey =  KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(decoded));
-        Signature sign = Signature.getInstance("SHA256WithRSA");
-        sign.initVerify(pubKey);
-        sign.update(data.getBytes());
-        byte[]  inputByte=Base64.decodeBase64(data_sign);
-        return sign.verify(inputByte);
-    }
 }

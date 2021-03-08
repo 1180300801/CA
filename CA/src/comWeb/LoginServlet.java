@@ -1,7 +1,6 @@
 package comWeb;
 
-import comUtil.DbUtil;
-import comUtil.SqlOperate;
+import comUtil.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.PrivateKey;
+import java.security.interfaces.RSAPrivateKey;
+import java.util.Base64;
 
 public class LoginServlet extends HttpServlet {
 
@@ -37,8 +39,8 @@ public class LoginServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
 
-        String username=request.getParameter("username");
-        String password=request.getParameter("password");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
         String vali_user = request.getParameter("ValiImage");
         String vali_sys =  request.getSession().getAttribute("Valicode").toString();
@@ -47,9 +49,32 @@ public class LoginServlet extends HttpServlet {
         if(!vali_user.equals(vali_sys)){
             logger.info("用户"+username+"登录失败，原因：验证码输入错误");
             String error="验证码错误";
-            request.setAttribute("error",error);
+            request.setAttribute("login_msg",error);
             request.getRequestDispatcher("index.jsp").forward(request,response);
         }
+
+        System.out.println(username);
+        String sign_username = request.getParameter("sign_username");
+        System.out.println(sign_username);
+        String sign_password = request.getParameter("sign_password");
+        PrivateKey privateKey = null;
+        try {
+            String sk = KeyUtil.loadPrivateKeyByFile(this.getServletContext().getRealPath("/key/sk.key"));
+            privateKey = Ende.loadPrivateKeyByStr(sk);
+            username =
+                    new String(Ende.decrypt((RSAPrivateKey) privateKey, Base64.getDecoder().decode(username)), "utf-8");
+            password =
+                    new String(Ende.decrypt((RSAPrivateKey) privateKey, Base64.getDecoder().decode(password)), "utf-8");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (!SHADigest.getDigest(username).equalsIgnoreCase(sign_username)
+                || !SHADigest.getDigest(password).equalsIgnoreCase(sign_password)) {
+            request.setAttribute("login_msg", "登录失败！报文可能被损坏！");
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            return;
+        }
+
         SqlOperate sqlOperate=new SqlOperate();
 //        System.out.print(username);
 //        System.out.print(password);
@@ -62,7 +87,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println("用户登录失败");
 
             error="用户名或密码错误";
-            request.setAttribute("error",error);
+            request.setAttribute("login_msg",error);
             request.getRequestDispatcher("index.jsp").forward(request,response);
         }
         else{
@@ -72,7 +97,6 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
             response.sendRedirect(request.getContextPath() + "/home.jsp");
-            //request.getRequestDispatcher("home.jsp").forward(request,response);
         }
     }
 }

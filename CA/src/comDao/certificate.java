@@ -15,8 +15,12 @@ public class certificate {
     private String end_time;
     private String file_path;
 
+    public certificate(){
+
+    }
+
     public certificate(ResultSet resultSet) throws SQLException {
-        while(resultSet.next()){
+        while (resultSet.next()){
             this.version = resultSet.getString("version");
             this.issuer = resultSet.getString("issuer");
             this.serial_Number = resultSet.getString("serial_Number");
@@ -26,6 +30,9 @@ public class certificate {
             this.start_time = resultSet.getString("start_time");
             this.end_time = resultSet.getString("end_time");
             this.file_path = resultSet.getString("file_path");
+            if(this.getSerial_Number()!=null){
+                return;
+            }
         }
     }
 

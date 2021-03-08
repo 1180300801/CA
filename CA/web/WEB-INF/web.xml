@@ -7,6 +7,17 @@
     <servlet>
         <description>This is the description of my LoginJ2EE component</description>
         <display-name>This is the display name of my LoginJ2EE component</display-name>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>comWeb.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>This is the description of my LoginJ2EE component</description>
+        <display-name>This is the display name of my LoginJ2EE component</display-name>
         <servlet-name>DownloadServlet</servlet-name>
         <servlet-class>comWeb.DownloadServlet</servlet-class>
     </servlet>
@@ -37,6 +48,16 @@
         <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <description>This is the description of my LoginJ2EE component</description>
+        <display-name>This is the display name of my LoginJ2EE component</display-name>
+        <servlet-name>QueryServlet</servlet-name>
+        <servlet-class>comWeb.QueryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryServlet</servlet-name>
+        <url-pattern>/QueryServlet</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <description>This is the description of my LoginJ2EE component</description>
@@ -63,6 +84,17 @@
     <servlet>
         <description>This is the description of my LoginJ2EE component</description>
         <display-name>This is the display name of my LoginJ2EE component</display-name>
+        <servlet-name>CheckServlet</servlet-name>
+        <servlet-class>comWeb.CheckServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckServlet</servlet-name>
+        <url-pattern>/CheckServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>This is the description of my LoginJ2EE component</description>
+        <display-name>This is the display name of my LoginJ2EE component</display-name>
         <servlet-name>ApplyServlet</servlet-name>
         <servlet-class>comWeb.ApplyServlet</servlet-class>
     </servlet>
@@ -74,12 +106,34 @@
     <servlet>
         <description>This is the description of my LoginJ2EE component</description>
         <display-name>This is the display name of my LoginJ2EE component</display-name>
+        <servlet-name>SelectServlet</servlet-name>
+        <servlet-class>comWeb.SelectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectServlet</servlet-name>
+        <url-pattern>/SelectServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>This is the description of my LoginJ2EE component</description>
+        <display-name>This is the display name of my LoginJ2EE component</display-name>
         <servlet-name>ShowServlet</servlet-name>
         <servlet-class>comWeb.ShowServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ShowServlet</servlet-name>
         <url-pattern>/ShowServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>This is the description of my LoginJ2EE component</description>
+        <display-name>This is the display name of my LoginJ2EE component</display-name>
+        <servlet-name>VerifyServlet</servlet-name>
+        <servlet-class>comWeb.VerifyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerifyServlet</servlet-name>
+        <url-pattern>/VerifyServlet</url-pattern>
     </servlet-mapping>
 
     <filter>

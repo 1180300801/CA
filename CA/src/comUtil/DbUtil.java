@@ -15,13 +15,6 @@ import java.sql.SQLException;
 public class DbUtil {
     Connection con=null;
 
-    /**
-* @Description: connect  database
-* @Param:  
-* @return:  
-* @Author: 1170300421 
-* @Date: 2019/11/17 
-*/ 
     public Connection getCon() {
        //Connection con=null;
         try{

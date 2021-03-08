@@ -19,8 +19,11 @@ public class LoginFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest) req;
         String uri = request.getRequestURI();
-        // 用户访问除了资源文件、主页、验证码servlet、登录servlet、注册servlet之外，都要进行登录状态检查
-        if (uri.contains("index.jsp") || uri.contains("register.jsp") || uri.contains("/CheckNumServlet") || uri.contains("/LoginServlet") || uri.contains("/RegisterServlet") || uri.contains("/images")|| uri.contains("/testServlet") ) {
+        // 用户未登陆时，只能访问以下内容：登陆和注册页面，以及登陆和注册对应的servlet，
+        // 还有前端页面设计相关的内容，此外还包括CheckServlet
+        if (uri.contains("index.jsp") || uri.contains("register.jsp") || uri.contains("/CheckNumServlet")
+                || uri.contains("/LoginServlet") || uri.contains("/RegisterServlet") || uri.contains("/images")
+                || uri.contains("/js")|| uri.contains("/css") || uri.contains("/CheckServlet")) {
             chain.doFilter(req, resp);
         }
         else {
@@ -29,7 +32,9 @@ public class LoginFilter implements Filter {
                 chain.doFilter(req, resp);
             } else {
                 //如果不放行,则跳转到登录页面
-                request.setAttribute("login_msg", "亲，请先登录");
+                if(!uri.endsWith("/CA/")){
+                    request.setAttribute("login_msg", "亲，请先登录");
+                }
                 request.getRequestDispatcher("/index.jsp").forward(request, resp);
             }
             //            chain.doFilter(req, resp);
